@@ -41,17 +41,16 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if nowPlayingMovies != nil {
-            print(nowPlayingMovies.count)
             return nowPlayingMovies.count
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "")
+        let cell = moviesTable.dequeueReusableCell(withIdentifier: "com.flix.movie") as! FXMovieTableViewCell
         let movie = nowPlayingMovies[indexPath.row] as! NSDictionary
         
-        cell.textLabel?.text = movie["title"] as? String
+        cell.movieTitle?.text = movie["title"] as? String
         return cell
     }
 }
