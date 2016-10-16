@@ -10,6 +10,7 @@
 		0876A548C416E82AD94D007C /* Pods_FlixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78FB7FC36C5E0FB0E7F77C8B /* Pods_FlixUITests.framework */; };
 		87AEFAF56AE9CAD12F714E24 /* Pods_Flix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07ED8AF648EB426B0CE18B84 /* Pods_Flix.framework */; };
 		E053A8EFD8BC786655714D1F /* Pods_FlixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BE2E018141F08FB1168266 /* Pods_FlixTests.framework */; };
+		F4A262131DB34C20003B3D39 /* FlixSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A262121DB34C20003B3D39 /* FlixSecrets.swift */; };
 		F4FE674F1DB2B30F00F30800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE674E1DB2B30F00F30800 /* AppDelegate.swift */; };
 		F4FE67511DB2B30F00F30800 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE67501DB2B30F00F30800 /* ViewController.swift */; };
 		F4FE67541DB2B30F00F30800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FE67521DB2B30F00F30800 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		CBAEB94747D778A882160AB6 /* Pods-FlixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlixUITests/Pods-FlixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5BE2E018141F08FB1168266 /* Pods_FlixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB01BD1406941DEA7183CF10 /* Pods-Flix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flix/Pods-Flix.release.xcconfig"; sourceTree = "<group>"; };
+		F4A262121DB34C20003B3D39 /* FlixSecrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlixSecrets.swift; sourceTree = "<group>"; };
 		F4FE674B1DB2B30F00F30800 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FE674E1DB2B30F00F30800 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4FE67501DB2B30F00F30800 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				F4FE67551DB2B30F00F30800 /* Assets.xcassets */,
 				F4FE67571DB2B30F00F30800 /* LaunchScreen.storyboard */,
 				F4FE675A1DB2B30F00F30800 /* Info.plist */,
+				F4A262121DB34C20003B3D39 /* FlixSecrets.swift */,
 			);
 			path = Flix;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				F4FE67671DB2B30F00F30800 /* Frameworks */,
 				F4FE67681DB2B30F00F30800 /* Resources */,
 				E51B84CAB033673570CD305F /* [CP] Copy Pods Resources */,
+				6F3AFA5C28D9C249608A3B82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,13 +245,16 @@
 				TargetAttributes = {
 					F4FE674A1DB2B30F00F30800 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					F4FE675E1DB2B30F00F30800 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = F4FE674A1DB2B30F00F30800;
 					};
 					F4FE67691DB2B30F00F30800 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = F4FE674A1DB2B30F00F30800;
 					};
 				};
@@ -312,7 +319,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4B5342B7DE7AF12431C75243 /* [CP] Embed Pods Frameworks */ = {
@@ -328,6 +335,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlixTests/Pods-FlixTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F3AFA5C28D9C249608A3B82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlixUITests/Pods-FlixUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		788732235FDCECC6298BB338 /* [CP] Copy Pods Resources */ = {
@@ -372,7 +394,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A7E4AB6314AF0D090BFA084F /* [CP] Check Pods Manifest.lock */ = {
@@ -387,7 +409,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D8E1FB13A395270214D792F4 /* [CP] Embed Pods Frameworks */ = {
@@ -427,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A262131DB34C20003B3D39 /* FlixSecrets.swift in Sources */,
 				F4FE67511DB2B30F00F30800 /* ViewController.swift in Sources */,
 				F4FE674F1DB2B30F00F30800 /* AppDelegate.swift in Sources */,
 			);
@@ -575,6 +598,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PP.Flix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -587,6 +611,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PP.Flix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -599,6 +624,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PP.FlixTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flix.app/Flix";
 			};
 			name = Debug;
@@ -612,6 +638,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PP.FlixTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flix.app/Flix";
 			};
 			name = Release;
@@ -624,6 +651,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PP.FlixUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Flix;
 			};
 			name = Debug;
@@ -636,6 +664,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PP.FlixUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Flix;
 			};
 			name = Release;
