@@ -13,6 +13,7 @@ class FXMovieTableViewCell: UITableViewCell {
     
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var moviePoster: UIImageView!
+    @IBOutlet weak var movieDescription: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +28,7 @@ class FXMovieTableViewCell: UITableViewCell {
     
     func setMovie(movie: NSDictionary) {
         movieTitle?.text = movie["title"] as? String
+        movieDescription.text = movie["overview"] as? String
         
         if let posterPath = movie["poster_path"] as? String {
             setImageWithURL(posterPath: posterPath)
