@@ -13,6 +13,7 @@
 		F4A262151DB34E83003B3D39 /* FXMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A262141DB34E83003B3D39 /* FXMovieTableViewCell.swift */; };
 		F4A262171DB3FF2A003B3D39 /* FXMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A262161DB3FF2A003B3D39 /* FXMovieDetailViewController.swift */; };
 		F4A2621B1DB49D4A003B3D39 /* FXSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A2621A1DB49D4A003B3D39 /* FXSecrets.swift */; };
+		F4A2621F1DB4A4BA003B3D39 /* FXImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A2621E1DB4A4BA003B3D39 /* FXImageViewExtension.swift */; };
 		F4FE674F1DB2B30F00F30800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE674E1DB2B30F00F30800 /* AppDelegate.swift */; };
 		F4FE67511DB2B30F00F30800 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE67501DB2B30F00F30800 /* ViewController.swift */; };
 		F4FE67541DB2B30F00F30800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FE67521DB2B30F00F30800 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		F4A262141DB34E83003B3D39 /* FXMovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXMovieTableViewCell.swift; sourceTree = "<group>"; };
 		F4A262161DB3FF2A003B3D39 /* FXMovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXMovieDetailViewController.swift; sourceTree = "<group>"; };
 		F4A2621A1DB49D4A003B3D39 /* FXSecrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXSecrets.swift; sourceTree = "<group>"; };
+		F4A2621E1DB4A4BA003B3D39 /* FXImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXImageViewExtension.swift; sourceTree = "<group>"; };
 		F4FE674B1DB2B30F00F30800 /* Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FE674E1DB2B30F00F30800 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4FE67501DB2B30F00F30800 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				F4FE67501DB2B30F00F30800 /* ViewController.swift */,
 				F4A262161DB3FF2A003B3D39 /* FXMovieDetailViewController.swift */,
 				F4A262141DB34E83003B3D39 /* FXMovieTableViewCell.swift */,
+				F4A2621E1DB4A4BA003B3D39 /* FXImageViewExtension.swift */,
 				F4FE67521DB2B30F00F30800 /* Main.storyboard */,
 				F4FE67571DB2B30F00F30800 /* LaunchScreen.storyboard */,
 				F4FE675A1DB2B30F00F30800 /* Info.plist */,
@@ -457,6 +460,7 @@
 			files = (
 				F4A262171DB3FF2A003B3D39 /* FXMovieDetailViewController.swift in Sources */,
 				F4FE67511DB2B30F00F30800 /* ViewController.swift in Sources */,
+				F4A2621F1DB4A4BA003B3D39 /* FXImageViewExtension.swift in Sources */,
 				F4A2621B1DB49D4A003B3D39 /* FXSecrets.swift in Sources */,
 				F4A262151DB34E83003B3D39 /* FXMovieTableViewCell.swift in Sources */,
 				F4FE674F1DB2B30F00F30800 /* AppDelegate.swift in Sources */,

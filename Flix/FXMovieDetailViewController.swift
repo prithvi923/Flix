@@ -21,6 +21,10 @@ class FXMovieDetailViewController: UIViewController {
 
         movieTitleLabel.text = movie["title"] as? String
         movieDescriptionLabel.text = movie["overview"] as? String
+        
+        if let posterPath = movie["poster_path"] as? String {
+            moviePosterView.setImageWithURL(posterPath: posterPath)
+        }
     }
 
     override func didReceiveMemoryWarning() {
