@@ -33,8 +33,6 @@ class FXMovieTableViewCell: UITableViewCell {
         if let posterPath = movie["poster_path"] as? String {
             setImageWithURL(posterPath: posterPath)
         } else {
-            // No poster image. Can either set to nil (no image) or a default movie poster image
-            // that you include as an asset
             moviePoster.image = nil
         }
     }
