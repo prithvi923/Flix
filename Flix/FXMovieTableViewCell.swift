@@ -30,21 +30,19 @@ class FXMovieTableViewCell: UITableViewCell {
         movieTitle?.text = movie["title"] as? String
         movieDescription.text = movie["overview"] as? String
         
-        if let posterPath = movie["poster_path"] as? String {
-            setImageWithURL(posterPath: posterPath)
-        } else {
-            moviePoster.image = nil
-        }
+        let posterPath = movie["poster_path"] as? String
+        setImageWithURL(posterPath: posterPath!)
     }
 
     func setImageWithURL(posterPath: String) {
-        moviePoster.contentMode = .scaleAspectFit
         Alamofire.request("https://image.tmdb.org/t/p/w342\(posterPath)")
             .responseData { response in
-                print(response.result.value)
                 if let data = response.result.value {
                     self.moviePoster.image = UIImage(data: data)
+                } else {
+                    self.moviePoster.image = nil
                 }
+                self.moviePoster.contentMode = .scaleAspectFit
         }
     }
 }
