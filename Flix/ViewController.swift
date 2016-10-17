@@ -53,5 +53,14 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! FXMovieTableViewCell
+        let indexPath = moviesTable.indexPath(for: cell)
+        let movie = nowPlayingMovies![indexPath!.row] as? NSDictionary
+        
+        let detailViewController = segue.destination as! FXMovieDetailViewController
+        detailViewController.movie = movie
+    }
 }
 
